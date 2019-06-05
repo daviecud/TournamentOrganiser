@@ -1,0 +1,11 @@
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\TournamentOrganiserUI.exe.config
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\TournamentOrganiserUI.exe
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\TournamentOrganiserUI.pdb
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.csprojAssemblyReference.cache
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.Properties.Resources.resources
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.TournamentViewForm.resources
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.csproj.GenerateResource.cache
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.csproj.CoreCompileInputs.cache
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.exe
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.pdb
+C:\Users\David\source\repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.CreateTournamentForm.resources

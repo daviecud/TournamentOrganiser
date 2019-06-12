@@ -1,6 +1,6 @@
 ﻿namespace TournamentOrganiserUI
 {
-    partial class DashboardForm
+    partial class TournamentDashboardForm
     {
         /// <summary>
         /// Required designer variable.

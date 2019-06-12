@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 namespace OrganiserLibrary
 {
     public class PrizeModel
-    {
+    {   
+        /// <summary>
+        /// THe unique identifier for the prize.
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// This will set the place number as a int ie. 1,2,3.....
         /// </summary>
@@ -25,5 +29,30 @@ namespace OrganiserLibrary
         /// and if PrizeAmount is not use. This is on the create prize form
         /// </summary>
         public double PrizePercentage { get; set; }
+
+        public PrizeModel()
+        {
+
+        }
+
+        public PrizeModel(String placeNumber, String placeName, String prizeAmount, String prizePercentage)
+        {
+            PlaceName = placeName;
+
+            int placeNumberValue = 0;
+            int.TryParse(placeNumber, out placeNumberValue);
+            PlaceNumber = placeNumberValue;
+
+            decimal prizeAmountValue = 0;
+            decimal.TryParse(prizeAmount, out prizeAmountValue);
+            PrizeAmount = prizeAmountValue;
+
+            double prizePercentageValue = 0;
+            double.TryParse(prizePercentage, out prizePercentageValue);
+            PrizePercentage = prizePercentageValue;
+        }
+
+   
+
     }
 }

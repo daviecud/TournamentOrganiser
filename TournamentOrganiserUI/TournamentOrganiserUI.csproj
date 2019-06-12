@@ -115,5 +115,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrganiserLibrary\OrganiserLibrary.csproj">
+      <Project>{35c8963b-385b-4ebd-9778-7c6afb5d2786}</Project>
+      <Name>OrganiserLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

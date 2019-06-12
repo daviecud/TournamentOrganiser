@@ -16,7 +16,15 @@ namespace TournamentOrganiserUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TournamentDashboardForm());
+
+            //Initialize the database conections
+            OrganiserLibrary.GlobalConfig.InitializeConnections(true, true);
+            Application.Run(new PrizeCreationForm());
+
+            //Application.Run(new TournamentDashboardForm());
+
+            //
+
         }
     }
 }

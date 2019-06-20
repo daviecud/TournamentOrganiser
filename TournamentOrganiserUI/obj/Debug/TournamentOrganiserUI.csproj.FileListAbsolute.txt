@@ -15,3 +15,5 @@ C:\Users\david\Source\Repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\
 C:\Users\david\Source\Repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\OrganiserLibrary.dll
 C:\Users\david\Source\Repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\OrganiserLibrary.pdb
 C:\Users\david\Source\Repos\TournamentOrganiser\TournamentOrganiserUI\obj\Debug\TournamentOrganiserUI.csproj.CopyComplete
+C:\Users\david\source\repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\Dapper.dll
+C:\Users\david\source\repos\TournamentOrganiser\TournamentOrganiserUI\bin\Debug\Dapper.xml

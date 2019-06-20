@@ -18,16 +18,6 @@ namespace TournamentOrganiserUI
             InitializeComponent();
         }
 
-        private void PrizeCreationForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void HeadingLabel_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void CreatePrizeButton_Click(object sender, EventArgs e)
         {
             if (ValidateForm())

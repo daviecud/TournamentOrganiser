@@ -51,7 +51,7 @@
             this.headingLabel.Size = new System.Drawing.Size(217, 50);
             this.headingLabel.TabIndex = 0;
             this.headingLabel.Text = "Create Prize";
-            this.headingLabel.Click += new System.EventHandler(this.HeadingLabel_Click);
+           
             // 
             // placeNumberLabel
             // 
@@ -177,7 +177,7 @@
             this.Controls.Add(this.headingLabel);
             this.Name = "PrizeCreationForm";
             this.Text = "Prize Creation";
-            this.Load += new System.EventHandler(this.PrizeCreationForm_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

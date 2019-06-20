@@ -4,3 +4,6 @@ C:\Users\david\Source\Repos\TournamentOrganiser\OrganiserLibrary\obj\Debug\Organ
 C:\Users\david\Source\Repos\TournamentOrganiser\OrganiserLibrary\obj\Debug\OrganiserLibrary.csproj.CoreCompileInputs.cache
 C:\Users\david\Source\Repos\TournamentOrganiser\OrganiserLibrary\obj\Debug\OrganiserLibrary.dll
 C:\Users\david\Source\Repos\TournamentOrganiser\OrganiserLibrary\obj\Debug\OrganiserLibrary.pdb
+C:\Users\david\source\repos\TournamentOrganiser\OrganiserLibrary\bin\Debug\Dapper.dll
+C:\Users\david\source\repos\TournamentOrganiser\OrganiserLibrary\bin\Debug\Dapper.xml
+C:\Users\david\source\repos\TournamentOrganiser\OrganiserLibrary\obj\Debug\OrganiserLibrary.csproj.CopyComplete

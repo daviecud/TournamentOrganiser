@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 namespace OrganiserLibrary
 {
     public class PersonModel
-    {
+    { 
+        /// <summary>
+        /// The unique identifier for the person
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// To create firstname for player on the create team form
         /// </summary>
@@ -24,5 +29,12 @@ namespace OrganiserLibrary
         /// To create telNumber for player on Add new Member section on the create team form
         /// </summary>
         public String TelNumber { get; set; }
+
+        public string FullName
+        {
+            get {
+                return $"{Firstname} {Lastname}";
+            }
+        }
     }
 }

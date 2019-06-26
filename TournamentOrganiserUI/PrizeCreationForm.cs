@@ -28,12 +28,10 @@ namespace TournamentOrganiserUI
                     prizeAmountBox.Text,
                     prizePercentageBox.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                GlobalConfig.Connection.CreatePrize(model);
+                
                 placeNumberBox.Text = "";
-                placeNameBox.Text = "";
+                placeNameBox.Text = ""; 
                 prizeAmountBox.Text = "0";
                 prizePercentageBox.Text = "0";
             }

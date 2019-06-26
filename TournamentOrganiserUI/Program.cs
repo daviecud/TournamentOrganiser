@@ -18,8 +18,8 @@ namespace TournamentOrganiserUI
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Initialize the database conections
-            OrganiserLibrary.GlobalConfig.InitializeConnections(true, true);
-            Application.Run(new PrizeCreationForm());
+            OrganiserLibrary.GlobalConfig.InitializeConnections(OrganiserLibrary.DatabaseType.TextFile);
+            Application.Run(new CreateTeamForm());
 
             //Application.Run(new TournamentDashboardForm());
 

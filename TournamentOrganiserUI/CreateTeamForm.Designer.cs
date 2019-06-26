@@ -32,7 +32,7 @@
             this.teamLabel = new System.Windows.Forms.Label();
             this.teamNameText = new System.Windows.Forms.TextBox();
             this.selectMemberLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.firstNameBox = new System.Windows.Forms.TextBox();
             this.memberDropDown = new System.Windows.Forms.ComboBox();
             this.addmemberLabel = new System.Windows.Forms.Label();
             this.firstnameLabel = new System.Windows.Forms.Label();
@@ -40,13 +40,13 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.telNumberLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lastNameBox = new System.Windows.Forms.TextBox();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.telNumberBox = new System.Windows.Forms.TextBox();
             this.createMemberButton = new System.Windows.Forms.Button();
             this.playersListBox = new System.Windows.Forms.ListBox();
             this.createTeamButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addMemberButton = new System.Windows.Forms.Button();
             this.deletePlayerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.headinglabel.ForeColor = System.Drawing.Color.Coral;
             this.headinglabel.Location = new System.Drawing.Point(13, 27);
             this.headinglabel.Name = "headinglabel";
-            this.headinglabel.Size = new System.Drawing.Size(240, 50);
+            this.headinglabel.Size = new System.Drawing.Size(237, 50);
             this.headinglabel.TabIndex = 0;
             this.headinglabel.Text = "Create Team";
             // 
@@ -68,7 +68,7 @@
             this.teamLabel.ForeColor = System.Drawing.Color.Coral;
             this.teamLabel.Location = new System.Drawing.Point(45, 95);
             this.teamLabel.Name = "teamLabel";
-            this.teamLabel.Size = new System.Drawing.Size(173, 38);
+            this.teamLabel.Size = new System.Drawing.Size(170, 38);
             this.teamLabel.TabIndex = 1;
             this.teamLabel.Text = "Team Name:";
             // 
@@ -86,16 +86,16 @@
             this.selectMemberLabel.ForeColor = System.Drawing.Color.Coral;
             this.selectMemberLabel.Location = new System.Drawing.Point(45, 197);
             this.selectMemberLabel.Name = "selectMemberLabel";
-            this.selectMemberLabel.Size = new System.Drawing.Size(286, 38);
+            this.selectMemberLabel.Size = new System.Drawing.Size(283, 38);
             this.selectMemberLabel.TabIndex = 3;
             this.selectMemberLabel.Text = "Select Team Member:";
             // 
-            // textBox2
+            // firstNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(213, 462);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(349, 20);
-            this.textBox2.TabIndex = 4;
+            this.firstNameBox.Location = new System.Drawing.Point(213, 462);
+            this.firstNameBox.Name = "firstNameBox";
+            this.firstNameBox.Size = new System.Drawing.Size(349, 20);
+            this.firstNameBox.TabIndex = 4;
             // 
             // memberDropDown
             // 
@@ -170,26 +170,26 @@
             this.label3.Size = new System.Drawing.Size(0, 31);
             this.label3.TabIndex = 11;
             // 
-            // textBox1
+            // lastNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(213, 508);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(349, 20);
-            this.textBox1.TabIndex = 12;
+            this.lastNameBox.Location = new System.Drawing.Point(213, 508);
+            this.lastNameBox.Name = "lastNameBox";
+            this.lastNameBox.Size = new System.Drawing.Size(349, 20);
+            this.lastNameBox.TabIndex = 12;
             // 
-            // textBox3
+            // emailBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(213, 553);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(349, 20);
-            this.textBox3.TabIndex = 13;
+            this.emailBox.Location = new System.Drawing.Point(213, 553);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(349, 20);
+            this.emailBox.TabIndex = 13;
             // 
-            // textBox4
+            // telNumberBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(212, 600);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(349, 20);
-            this.textBox4.TabIndex = 14;
+            this.telNumberBox.Location = new System.Drawing.Point(212, 600);
+            this.telNumberBox.Name = "telNumberBox";
+            this.telNumberBox.Size = new System.Drawing.Size(349, 20);
+            this.telNumberBox.TabIndex = 14;
             // 
             // createMemberButton
             // 
@@ -201,6 +201,7 @@
             this.createMemberButton.TabIndex = 15;
             this.createMemberButton.Text = "Create Member";
             this.createMemberButton.UseVisualStyleBackColor = true;
+            this.createMemberButton.Click += new System.EventHandler(this.CreateMemberButton_Click);
             // 
             // playersListBox
             // 
@@ -223,16 +224,17 @@
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // addMemberButton
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Coral;
-            this.button1.Location = new System.Drawing.Point(231, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 49);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Add Member";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addMemberButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMemberButton.ForeColor = System.Drawing.Color.Coral;
+            this.addMemberButton.Location = new System.Drawing.Point(231, 298);
+            this.addMemberButton.Name = "addMemberButton";
+            this.addMemberButton.Size = new System.Drawing.Size(154, 49);
+            this.addMemberButton.TabIndex = 18;
+            this.addMemberButton.Text = "Add Member";
+            this.addMemberButton.UseVisualStyleBackColor = true;
+            this.addMemberButton.Click += new System.EventHandler(this.AddMemberButton_Click);
             // 
             // deletePlayerButton
             // 
@@ -244,20 +246,21 @@
             this.deletePlayerButton.TabIndex = 19;
             this.deletePlayerButton.Text = "Delete Player";
             this.deletePlayerButton.UseVisualStyleBackColor = true;
+            this.deletePlayerButton.Click += new System.EventHandler(this.DeletePlayerButton_Click);
             // 
             // CreateTeamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 837);
+            this.ClientSize = new System.Drawing.Size(1351, 749);
             this.Controls.Add(this.deletePlayerButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addMemberButton);
             this.Controls.Add(this.createTeamButton);
             this.Controls.Add(this.playersListBox);
             this.Controls.Add(this.createMemberButton);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.telNumberBox);
+            this.Controls.Add(this.emailBox);
+            this.Controls.Add(this.lastNameBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.telNumberLabel);
             this.Controls.Add(this.emailLabel);
@@ -265,7 +268,7 @@
             this.Controls.Add(this.firstnameLabel);
             this.Controls.Add(this.addmemberLabel);
             this.Controls.Add(this.memberDropDown);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.firstNameBox);
             this.Controls.Add(this.selectMemberLabel);
             this.Controls.Add(this.teamNameText);
             this.Controls.Add(this.teamLabel);
@@ -283,7 +286,7 @@
         private System.Windows.Forms.Label teamLabel;
         private System.Windows.Forms.TextBox teamNameText;
         private System.Windows.Forms.Label selectMemberLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.ComboBox memberDropDown;
         private System.Windows.Forms.Label addmemberLabel;
         private System.Windows.Forms.Label firstnameLabel;
@@ -291,13 +294,13 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label telNumberLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox lastNameBox;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.TextBox telNumberBox;
         private System.Windows.Forms.Button createMemberButton;
         private System.Windows.Forms.ListBox playersListBox;
         private System.Windows.Forms.Button createTeamButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addMemberButton;
         private System.Windows.Forms.Button deletePlayerButton;
     }
 }

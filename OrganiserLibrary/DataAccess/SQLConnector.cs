@@ -61,11 +61,36 @@ namespace OrganiserLibrary
                 model.Id = p.Get<int>("id");
 
                 return model;
-
-
             }
         }
 
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            //Todo - setup sql connection
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectString(db)))
+            {
+                var team = new DynamicParameters();
+                 
+                team.Add("@TeamName", model.TeamName);
+                team.Add("id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spTeams_Insert", team, commandType: CommandType.StoredProcedure);
+
+                model.Id = team.Get<int>("id");
+
+                foreach (PersonModel member in model.TeamMembers)
+                {
+                    var p = new DynamicParameters();
+                    p.Add("TeamId", model.Id);
+                    p.Add("PersonId", member.Id);
+
+                    connection.Execute("dbo.spTeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
+
+                }
+
+                return model;
+            }
+        }
 
         public List<PersonModel> GetPerson_All()
         {
@@ -74,6 +99,23 @@ namespace OrganiserLibrary
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectString(db)))
             {
                 output = connection.Query<PersonModel>("dbo.spPerson_GetAll").ToList();
+            }
+            return output;
+        }
+
+        public List<TeamModel> GetTeam_All()
+        {
+            //TODO - setup path to sql connection teams_GetAll 
+            List<TeamModel> output;
+
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectString(db)))
+            {
+                output = connection.Query<TeamModel>("dbo.spTeams_GetAll").ToList();
+
+                foreach (TeamModel team in output)
+                {
+                    team.TeamMembers = connection.Query<PersonModel>("dbo.spTeamMembers_GetByTeam").ToList();
+                }
             }
             return output;
         }

@@ -8,6 +8,7 @@ namespace OrganiserLibrary
 {
     public class TournamentModel
     {
+        public int Id { get; set; }
         /// <summary>
         /// THis is to create Tournament name on Tournament Creator form
         /// </summary>

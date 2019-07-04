@@ -12,6 +12,7 @@ namespace OrganiserLibrary
         //PRivate variable set to const so no changes can be made to PrizesFile variable
         private const string PrizesFile = "PrizeModels.csv";
         private const string PersonsFile = "PersonModels.csv";
+        private const string TeamsFile = "TeamsModels.csv";
 
         //TODO - Wire CreatePrze data save to text file
         /// <summary>
@@ -72,6 +73,18 @@ namespace OrganiserLibrary
         public List<PersonModel> GetPerson_All()
         {
             return PersonsFile.FullFilePath().LoadFile().ConvertToPersonModels();
+        }
+
+        public List<TeamModel> GetTeam_All()
+        {
+            //TODO - setup path to file
+            return TeamsFile.FullFilePath().LoadFile().ConvertToTeamsModels();
+        }
+
+        public TeamModel CreateTeam(TeamModel model)
+        {
+            //Todo - setup path to file
+            throw new NotImplementedException();
         }
     }
 }

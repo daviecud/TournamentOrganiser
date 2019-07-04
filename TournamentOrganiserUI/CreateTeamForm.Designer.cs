@@ -76,7 +76,7 @@
             // 
             this.teamNameText.Location = new System.Drawing.Point(52, 152);
             this.teamNameText.Name = "teamNameText";
-            this.teamNameText.Size = new System.Drawing.Size(509, 20);
+            this.teamNameText.Size = new System.Drawing.Size(424, 20);
             this.teamNameText.TabIndex = 2;
             // 
             // selectMemberLabel
@@ -94,7 +94,7 @@
             // 
             this.firstNameBox.Location = new System.Drawing.Point(213, 462);
             this.firstNameBox.Name = "firstNameBox";
-            this.firstNameBox.Size = new System.Drawing.Size(349, 20);
+            this.firstNameBox.Size = new System.Drawing.Size(263, 20);
             this.firstNameBox.TabIndex = 4;
             // 
             // memberDropDown
@@ -102,7 +102,7 @@
             this.memberDropDown.FormattingEnabled = true;
             this.memberDropDown.Location = new System.Drawing.Point(52, 250);
             this.memberDropDown.Name = "memberDropDown";
-            this.memberDropDown.Size = new System.Drawing.Size(508, 21);
+            this.memberDropDown.Size = new System.Drawing.Size(424, 21);
             this.memberDropDown.TabIndex = 5;
             // 
             // addmemberLabel
@@ -174,28 +174,28 @@
             // 
             this.lastNameBox.Location = new System.Drawing.Point(213, 508);
             this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(349, 20);
+            this.lastNameBox.Size = new System.Drawing.Size(263, 20);
             this.lastNameBox.TabIndex = 12;
             // 
             // emailBox
             // 
             this.emailBox.Location = new System.Drawing.Point(213, 553);
             this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(349, 20);
+            this.emailBox.Size = new System.Drawing.Size(263, 20);
             this.emailBox.TabIndex = 13;
             // 
             // telNumberBox
             // 
             this.telNumberBox.Location = new System.Drawing.Point(212, 600);
             this.telNumberBox.Name = "telNumberBox";
-            this.telNumberBox.Size = new System.Drawing.Size(349, 20);
+            this.telNumberBox.Size = new System.Drawing.Size(264, 20);
             this.telNumberBox.TabIndex = 14;
             // 
             // createMemberButton
             // 
             this.createMemberButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createMemberButton.ForeColor = System.Drawing.Color.Coral;
-            this.createMemberButton.Location = new System.Drawing.Point(231, 651);
+            this.createMemberButton.Location = new System.Drawing.Point(174, 651);
             this.createMemberButton.Name = "createMemberButton";
             this.createMemberButton.Size = new System.Drawing.Size(154, 49);
             this.createMemberButton.TabIndex = 15;
@@ -208,27 +208,28 @@
             this.playersListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playersListBox.FormattingEnabled = true;
             this.playersListBox.ItemHeight = 21;
-            this.playersListBox.Location = new System.Drawing.Point(623, 152);
+            this.playersListBox.Location = new System.Drawing.Point(541, 152);
             this.playersListBox.Name = "playersListBox";
-            this.playersListBox.Size = new System.Drawing.Size(487, 466);
+            this.playersListBox.Size = new System.Drawing.Size(396, 466);
             this.playersListBox.TabIndex = 16;
             // 
             // createTeamButton
             // 
             this.createTeamButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createTeamButton.ForeColor = System.Drawing.Color.Coral;
-            this.createTeamButton.Location = new System.Drawing.Point(679, 651);
+            this.createTeamButton.Location = new System.Drawing.Point(541, 651);
             this.createTeamButton.Name = "createTeamButton";
-            this.createTeamButton.Size = new System.Drawing.Size(384, 49);
+            this.createTeamButton.Size = new System.Drawing.Size(396, 49);
             this.createTeamButton.TabIndex = 17;
             this.createTeamButton.Text = "Create Team";
             this.createTeamButton.UseVisualStyleBackColor = true;
+            this.createTeamButton.Click += new System.EventHandler(this.CreateTeamButton_Click);
             // 
             // addMemberButton
             // 
             this.addMemberButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMemberButton.ForeColor = System.Drawing.Color.Coral;
-            this.addMemberButton.Location = new System.Drawing.Point(231, 298);
+            this.addMemberButton.Location = new System.Drawing.Point(174, 298);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(154, 49);
             this.addMemberButton.TabIndex = 18;
@@ -240,9 +241,9 @@
             // 
             this.deletePlayerButton.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletePlayerButton.ForeColor = System.Drawing.Color.Coral;
-            this.deletePlayerButton.Location = new System.Drawing.Point(1146, 298);
+            this.deletePlayerButton.Location = new System.Drawing.Point(957, 298);
             this.deletePlayerButton.Name = "deletePlayerButton";
-            this.deletePlayerButton.Size = new System.Drawing.Size(154, 49);
+            this.deletePlayerButton.Size = new System.Drawing.Size(125, 49);
             this.deletePlayerButton.TabIndex = 19;
             this.deletePlayerButton.Text = "Delete Player";
             this.deletePlayerButton.UseVisualStyleBackColor = true;
@@ -252,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 749);
+            this.ClientSize = new System.Drawing.Size(1093, 749);
             this.Controls.Add(this.deletePlayerButton);
             this.Controls.Add(this.addMemberButton);
             this.Controls.Add(this.createTeamButton);

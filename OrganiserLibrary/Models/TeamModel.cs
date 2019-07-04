@@ -8,6 +8,8 @@ namespace OrganiserLibrary
 {
     public class TeamModel
     {
+
+        public int Id { get; set; }
         /// <summary>
         /// This is to create TeamName for create Team form
         /// </summary>

@@ -9,13 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TournamentOrganiserUI
+namespace TournamentOrganiserUI                                                                                                                                                                          
 {
     public partial class CreateTeamForm : Form
     {
 
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedMembers = new List<PersonModel>();
+        private List<TeamModel> Team = new List<TeamModel>();
         public CreateTeamForm()
         {
             InitializeComponent();
@@ -37,6 +38,9 @@ namespace TournamentOrganiserUI
             selectedMembers.Add(new PersonModel { Firstname = "Rona", Lastname = "Calderwood" });
         }
 
+        /// <summary>
+        /// Method to select member from dropdown/combobox list, and then populate the playersListBox with selectedMembers.
+        /// </summary>
         private void WireUpMembersList()
         {
             memberDropDown.DataSource = null;
@@ -95,14 +99,10 @@ namespace TournamentOrganiserUI
             {
                 return false;
             }
-            if (emailBox.Text.Length == 0)
+            if (telNumberBox.Text.Length == 0)
             {
                 return false;
             }
-
-
-
-
             return true;
         }
 
@@ -132,5 +132,41 @@ namespace TournamentOrganiserUI
                 WireUpMembersList(); 
             }
         }
+
+        private void CreateTeamButton_Click(object sender, EventArgs e)
+        {
+            TeamModel t = new TeamModel();
+
+            t.TeamName = teamNameText.Text;
+            t.TeamMembers = selectedMembers;
+
+            t = GlobalConfig.Connection.CreateTeam(t);
+
+            //Team.Add(t);
+
+           teamNameText.Text = "";
+          
+
+
+        }
+
+        private bool ValidateCreateTeamForm()
+        {
+            if (ValidateForm() == false)
+            {
+                return false;
+            }
+            if (teamNameText.TextLength == 0)
+            {
+                return false;
+            }
+
+            if (playersListBox.Items.Count == 0)
+            {
+                return false;
+            }
+            
+            return true;
+        } 
     }
 }

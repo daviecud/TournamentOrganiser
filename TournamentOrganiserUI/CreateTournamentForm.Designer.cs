@@ -119,6 +119,7 @@
             this.createTeamLabel.TabIndex = 6;
             this.createTeamLabel.TabStop = true;
             this.createTeamLabel.Text = "create new team";
+            this.createTeamLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CreateTeamLabel_LinkClicked);
             // 
             // selectTeamDropDown
             // 
@@ -148,6 +149,7 @@
             this.prizeButton.TabIndex = 9;
             this.prizeButton.Text = "Create Prize";
             this.prizeButton.UseVisualStyleBackColor = true;
+            this.prizeButton.Click += new System.EventHandler(this.PrizeButton_Click);
             // 
             // teamListLabel
             // 
@@ -211,6 +213,7 @@
             this.deleteSelectedPrizesButton.TabIndex = 15;
             this.deleteSelectedPrizesButton.Text = "Delete Selected";
             this.deleteSelectedPrizesButton.UseVisualStyleBackColor = true;
+            this.deleteSelectedPrizesButton.Click += new System.EventHandler(this.DeleteSelectedPrizesButton_Click);
             // 
             // createTourneButton
             // 

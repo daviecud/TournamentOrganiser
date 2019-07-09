@@ -13,9 +13,12 @@ namespace TournamentOrganiserUI
 {
     public partial class PrizeCreationForm : Form
     {
-        public PrizeCreationForm()
+        IPrizeRequest callingForm;
+        public PrizeCreationForm(IPrizeRequest caller)
         {
             InitializeComponent();
+
+            callingForm = caller;
         }
 
         private void CreatePrizeButton_Click(object sender, EventArgs e)
@@ -28,12 +31,16 @@ namespace TournamentOrganiserUI
                     prizeAmountBox.Text,
                     prizePercentageBox.Text);
 
-                GlobalConfig.Connection.CreatePrize(model);
-                
-                placeNumberBox.Text = "";
-                placeNameBox.Text = ""; 
-                prizeAmountBox.Text = "0";
-                prizePercentageBox.Text = "0";
+                model = GlobalConfig.Connection.CreatePrize(model);
+
+                callingForm.PrizeComplete(model);
+
+                this.Close();
+
+                //placeNumberBox.Text = "";
+                //placeNameBox.Text = ""; 
+                //prizeAmountBox.Text = "0";
+                //prizePercentageBox.Text = "0";
             }
             else
             {

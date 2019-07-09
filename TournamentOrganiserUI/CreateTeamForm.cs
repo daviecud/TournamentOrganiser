@@ -17,10 +17,12 @@ namespace TournamentOrganiserUI
         private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
         private List<PersonModel> selectedMembers = new List<PersonModel>();
         private List<TeamModel> Team = new List<TeamModel>();
-        public CreateTeamForm()
+        private ITeamRequest callingform;
+        public CreateTeamForm(ITeamRequest caller)
         {
             InitializeComponent();
 
+            callingform = caller;
            // CreateSampleData();
 
             WireUpMembersList();
@@ -140,11 +142,12 @@ namespace TournamentOrganiserUI
             t.TeamName = teamNameText.Text;
             t.TeamMembers = selectedMembers;
 
-            t = GlobalConfig.Connection.CreateTeam(t);
+            GlobalConfig.Connection.CreateTeam(t);
 
-            //Team.Add(t);
+            callingform.TeamComplete(t);
 
-           teamNameText.Text = "";
+            this.Close();
+            
           
 
 

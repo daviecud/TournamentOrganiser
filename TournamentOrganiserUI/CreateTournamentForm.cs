@@ -11,14 +11,18 @@ using System.Windows.Forms;
 
 namespace TournamentOrganiserUI
 {
-    public partial class CreateTournamentForm : Form
+    public partial class CreateTournamentForm : Form, IPrizeRequest, ITeamRequest
     {
 
         private List<TeamModel> availableTeams = GlobalConfig.Connection.GetTeam_All();
         private List<TeamModel> selectedTeams = new List<TeamModel>();
+        List<PrizeModel> selectedPrizes = new List<PrizeModel>();
         public CreateTournamentForm()
         {
             InitializeComponent();
+
+            WireUpTeamList();
+
         }
 
         private void WireUpTeamList()
@@ -32,6 +36,11 @@ namespace TournamentOrganiserUI
 
             teamListBox.DataSource = selectedTeams; 
             teamListBox.DisplayMember = "TeamName";
+
+            prizesListBox.DataSource = null;
+
+            prizesListBox.DataSource = selectedPrizes;
+            prizesListBox.DisplayMember = "PlaceName";
         }
 
 
@@ -49,6 +58,8 @@ namespace TournamentOrganiserUI
             {
                 availableTeams.Remove(t);
                 selectedTeams.Add(t);
+
+                WireUpTeamList();
             }
         }
 
@@ -60,7 +71,52 @@ namespace TournamentOrganiserUI
             {
                 selectedTeams.Remove(team);
                 availableTeams.Add(team);
+
+                WireUpTeamList();
             }
         }
+
+        private void PrizeButton_Click(object sender, EventArgs e)
+        {
+            //Call the CreatePrizeForm
+            PrizeCreationForm form = new PrizeCreationForm(this);
+            form.Show();
+
+            
+        }
+
+        public void PrizeComplete(PrizeModel model)
+        {
+            //Get back from the form a PrizeModel
+            //Take the PrizeModel and populate the prizeList
+            selectedPrizes.Add(model);
+            WireUpTeamList();
+        }
+
+        private void DeleteSelectedPrizesButton_Click(object sender, EventArgs e)
+        {
+            PrizeModel prize = (PrizeModel)prizesListBox.SelectedItem;
+
+            if (prize != null)
+            {
+                selectedPrizes.Remove(prize);
+
+                WireUpTeamList();
+            }
+        }
+
+        public void TeamComplete(TeamModel model)
+        {
+            selectedTeams.Add(model);
+            WireUpTeamList();
+        }
+
+        private void CreateTeamLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateTeamForm form = new CreateTeamForm(this);
+            form.Show();
+        }
+
+        
     }
 }

@@ -117,6 +117,45 @@ namespace TournamentOrganiserUI
             form.Show();
         }
 
-        
+        private void CreateTourneButton_Click(object sender, EventArgs e)
+        {
+
+            //Validate data
+            decimal fee = 0;
+
+            bool feeAcceptable = decimal.TryParse(entryFeeBox.Text, out fee);
+
+            if (!feeAcceptable)
+            {
+                MessageBox.Show("You need to enter a valid Entry Fee", "Invalid Fee",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            //Create Tournament model
+            TournamentModel tourm = new TournamentModel();
+
+            tourm.TournamentName = tournamentNameBox.Text;
+            tourm.EntryFee = fee;
+
+            foreach (PrizeModel prize in selectedPrizes)
+            {
+                tourm.Prizes.Add(prize);
+            }
+
+            tourm.EnteredTeams = selectedTeams;
+
+            //Wire our matchups
+           
+            TournamentLlogic.CreateRounds(tourm);
+
+            //Create Tournament entry
+            //Create all of the prizes entries
+            //Create all of the team entries
+
+            GlobalConfig.Connection.CreateTournament(tourm);
+
+            
+        }
     }
 }

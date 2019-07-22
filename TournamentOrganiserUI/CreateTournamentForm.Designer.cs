@@ -224,6 +224,7 @@
             this.createTourneButton.TabIndex = 16;
             this.createTourneButton.Text = "Create Tournament";
             this.createTourneButton.UseVisualStyleBackColor = true;
+            this.createTourneButton.Click += new System.EventHandler(this.CreateTourneButton_Click);
             // 
             // CreateTournamentForm
             // 

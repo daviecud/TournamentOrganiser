@@ -86,5 +86,10 @@ namespace OrganiserLibrary
             //Todo - setup path to file
             throw new NotImplementedException();
         }
+
+        public TournamentModel CreateTournament(TournamentModel model)
+        {
+            return model;
+        }
     }
 }

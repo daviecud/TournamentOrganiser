@@ -8,8 +8,9 @@ namespace OrganiserLibrary
 {
     public class MatchupModel
     {
+        public int Id { get; set }
         /// <summary>
-        /// This is used to get the entries to the tournament and create a List from the MatchupEntry class matchups
+        /// This method is to get the entries to the tournament and create a List from the MatchupEntry class matchups
         /// </summary>
         public List<MatchupEntryModel> Entries { get; set; }
         /// <summary>
